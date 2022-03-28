@@ -4,13 +4,25 @@ import cn from "classnames";
 
 import styles from "./styles.module.scss"
 
-const Navbar = () => {
+const Navbar = ({activePage, setActivePage}) => {
 
   return (
       <div className={styles.nbRow}>
-        <div className={cn(styles.nbLinkPage)}>Home</div>
-        <div>Set</div>
-        <div>Dice</div>
+        <div onClick={() => {
+          setActivePage('home')
+        }}
+             className={cn(styles.nbLink, {[styles.nbLinkPage]: activePage === 'home'})}>Home
+        </div>
+        <div onClick={() => {
+          setActivePage('set')
+        }}
+             className={cn(styles.nbLink, {[styles.nbLinkPage]: activePage === 'set'})}>Set
+        </div>
+        <div onClick={() => {
+          setActivePage('dice')
+        }}
+             className={cn(styles.nbLink, {[styles.nbLinkPage]: activePage === 'dice'})}>Dice
+        </div>
       </div>
   )
 }

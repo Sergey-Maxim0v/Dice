@@ -9,6 +9,9 @@
 }
 
 .nbLink {
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s;
+
   &Page {
     width: auto;
     height: 100%;

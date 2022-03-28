@@ -1,8 +1,10 @@
 import React from "react";
 
-const Dice = () => {
+const Dice = ({diceArray}) => {
   return (
-      <div>Dice</div>
+      <div onClick={() => {
+        console.log(diceArray)
+      }}>Dice</div>
   )
 }
 

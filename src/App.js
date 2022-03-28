@@ -8,17 +8,19 @@ import Dice from "./components/Dice";
 
 import './styles/app.scss'
 
-
 function App() {
   const [activePage, setActivePage] = useState('home')
-
+  const [diceArray, setDiceArray] = useState([])
 
   return (
       <div className='mainLayout'>
         <Navbar activePage={activePage} setActivePage={setActivePage}/>
-        {activePage === 'home' && <Home/>}
-        {activePage === 'set' && <Set/>}
-        {activePage === 'dice' && <Dice/>}
+        {activePage === 'home' &&
+            <Home diceArray={diceArray} setDiceArray={setDiceArray} setActivePage={setActivePage}/>}
+        {activePage === 'set' &&
+            <Set diceArray={diceArray} setDiceArray={setDiceArray}/>}
+        {activePage === 'dice' &&
+            <Dice diceArray={diceArray}/>}
         <Footer/>
       </div>
   );

@@ -1,0 +1,40 @@
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: #1F2326;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &Link {
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &Git {
+      background-image: url("../../../public/logo-white-git.svg");
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &Gmail {
+      background-image: url("../../../public/logo-white-gmail.svg");
+      background-size: 90%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &Signature {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(0, -50%);
+  }
+}

@@ -18,7 +18,7 @@ function App() {
         {activePage === 'home' &&
             <Home diceArray={diceArray} setDiceArray={setDiceArray} setActivePage={setActivePage}/>}
         {activePage === 'set' &&
-            <Set diceArray={diceArray} setDiceArray={setDiceArray}/>}
+            <Set setActivePage={setActivePage} diceArray={diceArray} setDiceArray={setDiceArray}/>}
         {activePage === 'dice' &&
             <Dice diceArray={diceArray}/>}
         <Footer/>

@@ -18,11 +18,17 @@
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid transparent;
-  transition: border-bottom 0.2s;
+  text-shadow: none;
+  transition: border-bottom 0.2s, color 0.2s, text-shadow 0.2s;
   cursor: pointer;
 
-  &Page {
+  &:hover{
+    color: white;
+    text-shadow: 0 0 2px white;
+    border-bottom: 2px solid white;
+  }
 
+  &Page {
     border-bottom-color: #7C6AFA;
   }
 }

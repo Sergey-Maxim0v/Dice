@@ -10,7 +10,7 @@ const Set = ({diceArray, setDiceArray, setActivePage}) => {
   return (
       <div className={styles.setRow}>
         <h1 className={styles.setTitle}>Change your dice</h1>
-        <SetDicesTable/>
+        <SetDicesTable diceArray={diceArray} setDiceArray={setDiceArray}/>
         <div className={styles.setButtonRow}>
           <div className={cn('button')}
                onClick={() => {

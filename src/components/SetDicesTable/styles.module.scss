@@ -1,6 +1,30 @@
-.setDicesRow{
-  width: 100%;
-  height: auto;
-  padding: 20px 0;
-  box-sizing: border-box;
+.setDices {
+
+  &Row {
+    width: 100%;
+    height: auto;
+    flex-grow: 1;
+    padding: 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &Title {
+    font-size: 20px;
+  }
+
+  &Button{
+    color: #7C6AFA;
+
+    &Row{
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

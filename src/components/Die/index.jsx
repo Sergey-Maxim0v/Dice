@@ -3,41 +3,51 @@ import styles from "./styles.module.scss"
 
 const Die = ({die, setDiceArray, index, diceArray}) => {
 
-  const handleInput = useCallback(
-      (event, input) => {
+  const handleNameInput = useCallback(
+      (event) => {
         const userDie = {name: die.name.slice(), value: die.value.slice()}
         const userDiceArray = diceArray.slice();
 
-        if (input === 'name') {
-          userDiceArray[index] = {...userDie, name: event.target.value}
-        }
-
-        if (input === 'value') {
-          userDiceArray[index] = {...userDie, value: event.target.value.split(',')}
-        }
-        console.log(userDiceArray)
+        userDiceArray[index] = {...userDie, name: event.target.value}
 
         return setDiceArray(userDiceArray);
       },
       [die, diceArray, setDiceArray, index]
   );
 
+  const handleValueInput = useCallback(
+      (event) => {
+        const userDie = {name: die.name.slice(), value: die.value.slice()}
+        const userDiceArray = diceArray.slice();
+        const userValueArray = die.value.slice();
+        //TODO: функция изменения элемента массива
+
+        userDiceArray[index] = {...userDie, value: userValueArray}
+
+        return setDiceArray(userDiceArray);
+      }, [die, diceArray, setDiceArray, index]
+  )
+  console.log(diceArray)
   return (
       <div className={styles.dieRow}>
         <h5 className={styles.dieTitle}>
           {`Die # ${index + 1}`}
         </h5>
-        <input type={'text'}
+        <input className={styles.dieNameInput}
+               type={'text'}
                placeholder={`Die name`}
                value={die.name}
-               onChange={event => handleInput(event, 'name')}
+               onChange={event => handleNameInput(event)}
         />
+        <div className={styles.dieDelimiter}>{`: `}</div>
         <label>
-          <input type={'text'}
-                 placeholder={`Fill in dice values separated by commas`}
-                 value={die.value}
-                 onChange={event => handleInput(event, 'value')}
-          />
+          {die.value.map((el, i) => {
+            return <input key={i}
+                          className={styles.dieValueInput}
+                          value={el}
+                          onChange={event => event}
+            />
+          })}
         </label>
       </div>
   )

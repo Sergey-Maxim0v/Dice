@@ -5,7 +5,7 @@ import styles from "./styles.module.scss"
 import cn from "classnames";
 
 const SetDicesTable = ({diceArray, setDiceArray}) => {
-  const initialDie = {name: 'One die', value: [1, 2, 3, 4, 5, 6]}
+  const initialDie = {name: 'Name die', value: [1, 2, 3, 4, 5, 6]}
 
   useEffect(() => {
     if (!diceArray.length) {
